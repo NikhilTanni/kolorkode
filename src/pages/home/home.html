@@ -1,0 +1,44 @@
+<div class="info_modal" *ngIf="mod_info==1">
+    <h2 style='text-align:center;border-bottom:1px solid grey'>Kolor-Kode app</h2>
+    <h4 style="text-align:center">
+      Designed & developed by Nikhil. Stay tuned for more apps!<br/>
+      <span style='font-size:250%;'><a href="http://facebook.com/nikhiltanni"><ion-icon name="logo-facebook"></ion-icon></a></span> &nbsp;&nbsp;
+      <span style='font-size:250%'><a href="#" (click)="mail('nikhiltanni97@gmail.com?subject=kolorkode%20app%20')"><ion-icon name="md-mail"></ion-icon></a></span>
+    </h4>
+  </div>
+<ion-content padding>
+  <!-- <div class="leftpanel">
+    <div class="palete" *ngFor="let r of color[0]" style="background-color:rgb({{r[0]}},{{r[1]}},{{r[2]}})">Red : ({{r[0]}},{{r[1]}},{{r[2]}})</div>
+  </div>
+  <div class="midpanel">
+    <div class="palete"></div>
+  </div>
+  <div class="rightpanel">
+    <div class="palete"></div>
+  </div> -->
+<div style="color:white" class="branding">
+  <span style="color:violet">K</span>
+  <span style="color:indigo">O</span>
+  <span style="color:white">L</span>
+  <span style="color:green">O</span>
+  <span style="color:yellow">R</span>
+  -
+  <span style="color:orange">K</span>
+  <span style="color:red">O</span>
+  <span style="color:brown">D</span>
+  <span style="color:cyan">E</span>
+  <br/>
+  <span style="font-size:60%">HeX & RgB converter</span>
+</div>
+  <div class="mainpanel" [style.background-color]="hex">
+
+    <ion-list class="inputs">
+          <ion-input class="rgbinput" [style.color]="invert" [(ngModel)]="rgb" (keyup)="rgbtohex($event)" placeholder="R,G,B"></ion-input>
+          <ion-input class="hexinput" [style.color]="invert" [(ngModel)]="hex" (keyup)="hextorgb($event)" placeholder="#HEX"></ion-input>
+    </ion-list>
+  </div>
+  <button ion-button class="myprofile" (click)="toggle_mod_info()"><ion-icon name="ios-more" style="color:white"></ion-icon></button>
+  <p class="info">
+    Just paste rgb values as example: 255,0,0  <br/>or 6 digit hex value with hash (#) example:  #ff0000
+  </p>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "kolorkode",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
