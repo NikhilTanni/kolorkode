@@ -34,7 +34,7 @@
 
     <ion-list class="inputs">
           <ion-input class="rgbinput" [style.color]="invert" [(ngModel)]="rgb" (keyup)="rgbtohex($event)" placeholder="R,G,B"></ion-input>
-          <ion-input class="hexinput" [style.color]="invert" [(ngModel)]="hex" (keyup)="hextorgb($event)" placeholder="#HEX"></ion-input>
+          <ion-input class="hexinput" [style.color]="invert" [(ngModel)]="hex" autocapitalize=words (keyup)="hextorgb($event)" placeholder="#HEX" text-uppercase></ion-input>
     </ion-list>
   </div>
   <button ion-button class="myprofile" (click)="toggle_mod_info()"><ion-icon name="ios-more" style="color:white"></ion-icon></button>

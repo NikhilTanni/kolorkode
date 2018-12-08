@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.nikk.kolorkode" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>kolorkode</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <description>KolorKode app - hex and rgb converter.</description>
+    <author email="nikhiltanni97@gmail.com" href="https://nikhiltanni.github.io">nikk team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

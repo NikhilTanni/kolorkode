@@ -56,15 +56,64 @@ export class HomePage {
   }
 
   hextorgb(ev){
-    var bigint = parseInt(this.hex, 16);
-    var r = (bigint >> 16) & 255;
-    var g = (bigint >> 8) & 255;
-    var b = bigint & 255;
 
-    this.rgb =  r + "," + g + "," + b;
+    var tmp = this.hex_comp(this.hex);
+    this.rgb="";
+    try{
+      if(isNaN(tmp['r'])){
+        this.rgb=this.rgb+"??";
+      }
+      else{
+        this.rgb=this.rgb+tmp['r'];
+      }
+      this.rgb=this.rgb+",";
+      if(isNaN(tmp['g'])){
+        this.rgb=this.rgb+"??";
+      }
+      else{
+        this.rgb=this.rgb+tmp['g'];
+      }
+      this.rgb=this.rgb+",";
+      if(isNaN(tmp['b'])){
+        this.rgb=this.rgb+"??";
+      }
+      else{
+        this.rgb=this.rgb+tmp['b'];
+      }
+
+    } catch(e){
+      console.log(e);
+    }
+
       this.invertcolor();
       // this.pushitemtofirebase({'fromrgb' : this.rgb, 'tohex':this.hex, 'key':ev.target.value});
   }
+
+
+
+  hex_comp(hex){
+    // var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    // console.log(result);
+    var spl="";
+
+    var ar=[];
+    for(var i=1;i<hex.length;i++){
+      if(i%2==1){
+        spl=hex[i];
+      }
+      else{
+        spl=spl+hex[i];
+        ar.push(spl);
+      }
+    }
+    // console.log(ar);
+    return ar ? {
+        r: parseInt(ar[0], 16),
+        g: parseInt(ar[1], 16),
+        b: parseInt(ar[2], 16)
+    } : null;
+  }
+
 
   invertcolor(){
     var hexx=this.hex.substring(1,this.hex.length);
